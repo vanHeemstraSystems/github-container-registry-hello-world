@@ -19,13 +19,31 @@
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
+  - release
   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
     - echo "Compiling the code..."
+    # get the job id and save it as environment statement
+    - echo BUILD_JOB_ID=$CI_JOB_ID >> CI_JOB_ID.env
+    - mkdir build
+    - cat LICENSE > build/LICENSE
+    - cat README.md > build/README.md
+    - cat Dockerfile > build/Dockerfile
+    - cat config.yaml > build/config.yaml
+    - cat run.sh > build/run.sh
+    - cd build
+    - tar -cf hello_world.tar .
+    - cd ../    
     - echo "Compile complete."
+  artifacts:
+    paths:
+    - "build/hello_world.tar"
+    reports:
+      # export the environment statement so we can access it in the release stage
+      dotenv: CI_JOB_ID.env    
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
@@ -40,6 +58,31 @@ lint-test-job:   # This job also runs in the test stage.
     - echo "Linting code... This will take about 10 seconds."
     - sleep 10
     - echo "No lint issues found."
+
+release-job:      # This job runs in the release stage.
+  stage: release  # It only runs when *both* jobs in the test stage complete successfully.
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  needs:
+    - job: build-job
+      artifacts: true
+  script:
+    - echo "release application..."
+    - echo "Application successfully released."
+  release:
+    name: 'Release Executables $CI_COMMIT_SHORT_SHA'
+    description: 'Created using the release-cli'
+    # tag_name is a mandatory field and cannot be an empty string
+    tag_name: '$CI_COMMIT_SHORT_SHA'
+    assets:
+      links:
+        - name: 'hello_world'
+          # Use variables to build a URL to access the artifacts
+          # ${CI_PROJECT_URL} is the repository URL
+          # ${BUILD_JOB_ID} is from the previous job,
+          # the build stage, that contains the artifact
+          url: '${CI_PROJECT_URL}/-/jobs/${BUILD_JOB_ID}/artifacts/file/build/hello_world.tar'
+  only:
+    - main # only execute the release if the pipeline runs for the main branch
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
