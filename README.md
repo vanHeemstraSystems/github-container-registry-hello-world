@@ -15,6 +15,8 @@ Based on "GitLab CI-CD Releases with Build Artifacts" at https://martin-renze.de
 
 Based on "Using the tar Command in the Target Directory" at https://www.baeldung.com/linux/tar-archive-without-directory-structure#2-using-the-tar-command-in-the-target-directory
 
+Based on "Squash Test Management" at https://github.com/vanHeemstraSystems/squash-test-management
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
