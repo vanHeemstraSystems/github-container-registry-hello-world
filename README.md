@@ -11,6 +11,8 @@ Based on "Container Environment Promotion Series' Articles" at https://dev.to/n3
 
 Based on "Container image promotion across environments - YAML" at https://dev.to/n3wt0n/container-image-promotion-across-environments-yaml-1ca6
 
+Based on "GitLab CI-CD Releases with Build Artifacts" at https://martin-renze.de/posts/gitlab-ci-releases/
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
