@@ -17,6 +17,8 @@ Based on "Using the tar Command in the Target Directory" at https://www.baeldung
 
 Based on "Squash Test Management" at https://github.com/vanHeemstraSystems/squash-test-management
 
+**IMPORTANT**: Make sure you have added ```wvanheemstra``` as a collaborator to this repository, for it to be recognized from GitLab.
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
