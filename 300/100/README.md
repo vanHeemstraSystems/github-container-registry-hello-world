@@ -71,7 +71,7 @@ run.sh
 
 ## Content of ```.gitlab-ci.yml```
 
-**NOTE**: GitLab will automatically recognize ```.gitlab-ci.yml``` as a pipeline file, whereas it won't recognize ```.gitlab-ci.y**a**ml``` as a pipeline. Mind the ```.yml``` spelling therefor!
+**NOTE**: GitLab will automatically recognize ```.gitlab-ci.yml``` as a pipeline file, whereas it won't recognize ```.gitlab-ci.yaml``` as a pipeline. Mind the ```.yml``` spelling therefor!
 
 ```
 # This file is a template, and might need editing before it works on your project.
