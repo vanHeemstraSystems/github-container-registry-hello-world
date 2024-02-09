@@ -125,3 +125,15 @@ release-job:
 ```
 
 .gitlab-ci.yaml
+
+The ```.gitlab-ci.yml``` file defines two stages, “build” and “release”. 
+
+The “**build**” stage compiles the code by concatenating the contents of the two text files and saves the output to a archive "hello_world.tar" in a directory named “build”. 
+
+It also creates an environment statement ```BUILD_JOB_ID=$CI_JOB_ID``` using the job ID to use it later in the release stage. 
+
+In the artifact section, it exports the environment statement so we can access it in the release stage.
+
+The “**release**” stage releases the application using the GitLab release-cli image. It requires the “build” stage to be executed successfully by using needs. 
+
+The script in the release stage echoes the release application and successfully released the application. In the release section, it creates a name and description for the release and specifies the tag name. It also specifies the URL to access the artifacts in the assets section.
