@@ -83,11 +83,18 @@ build-job:
     # get the job id and save it as environment statement
     - echo BUILD_JOB_ID=$CI_JOB_ID >> CI_JOB_ID.env
     - mkdir build
-    - cat fileconc1.txt fileconc2.txt > build/file.txt
+    - cat LICENSE > build/LICENSE
+    - cat README.md > build/README.md
+    - cat Dockerfile > build/Dockerfile
+    - cat config.yaml > build/config.yaml
+    - cat run.sh > build/run.sh
+    - cd build
+    - tar -cf hello_world.tar .
+    - cd ../
     - echo "Compile completed."
   artifacts:
     paths:
-    - "build/file.txt"
+    - "build/hello_world.tar"
     reports:
       # export the environment statement so we can access it in the release stage
       dotenv: CI_JOB_ID.env
@@ -107,12 +114,12 @@ release-job:
     tag_name: '$CI_COMMIT_SHORT_SHA'
     assets:
       links:
-        - name: 'File from cat'
+        - name: 'hello_world'
           # Use variables to build a URL to access the artifacts
           # ${CI_PROJECT_URL} is the repository URL
           # ${BUILD_JOB_ID} is from the previous job,
           # the build stage, that contains the artifact
-          url: '${CI_PROJECT_URL}/-/jobs/${BUILD_JOB_ID}/artifacts/file/build/file.txt'
+          url: '${CI_PROJECT_URL}/-/jobs/${BUILD_JOB_ID}/artifacts/file/build/hello_world.tar'
   only:
     - main # only execute the release if the pipeline runs for the main branch
 ```
