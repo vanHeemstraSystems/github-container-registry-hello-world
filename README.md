@@ -9,6 +9,8 @@ Based on "We are doing it WRONG! Containers deployment and promotion across envi
 
 Based on "Container Environment Promotion Series' Articles" at https://dev.to/n3wt0n/series/3107
 
+Based on "Container image promotion across environments - YAML" at https://dev.to/n3wt0n/container-image-promotion-across-environments-yaml-1ca6
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
