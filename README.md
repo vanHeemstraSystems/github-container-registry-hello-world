@@ -3,6 +3,8 @@ github-container-registry-hello-world
 
 Based on "GitHub Container Registry: BETTER than Docker Hub?" at https://dev.to/github/github-container-registry-better-than-docker-hub-1o9k
 
+Based on "GitHub Container Registry: BETTER Than Docker Hub?" at https://www.youtube.com/watch?v=WjzA9dfk5w4
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
