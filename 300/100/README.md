@@ -110,7 +110,7 @@ release-job:
   release:
     name: 'Release Executables $CI_COMMIT_SHORT_SHA'
     description: 'Created using the release-cli'
-    # tag_name is a memandatory field and can not be an empty string
+    # tag_name is a mandatory field and cannot be an empty string
     tag_name: '$CI_COMMIT_SHORT_SHA'
     assets:
       links:
