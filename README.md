@@ -13,6 +13,8 @@ Based on "Container image promotion across environments - YAML" at https://dev.t
 
 Based on "GitLab CI-CD Releases with Build Artifacts" at https://martin-renze.de/posts/gitlab-ci-releases/
 
+Based on "Using the tar Command in the Target Directory" at https://www.baeldung.com/linux/tar-archive-without-directory-structure#2-using-the-tar-command-in-the-target-directory
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
