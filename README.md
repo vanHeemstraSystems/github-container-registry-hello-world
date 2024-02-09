@@ -1,7 +1,7 @@
-repository-name
-# Repository Name
+github-container-registry-hello-world
+# GitHub Container Registry "Hello World!"
 
-Based on "ABC" at https://www.abc.com/
+Based on "GitHub Container Registry: BETTER than Docker Hub?" at https://dev.to/github/github-container-registry-better-than-docker-hub-1o9k
 
 ## 100 - Introduction
 
