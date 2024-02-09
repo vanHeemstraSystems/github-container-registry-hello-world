@@ -128,7 +128,7 @@ release-job:
 
 The ```.gitlab-ci.yml``` file defines two stages, “build” and “release”. 
 
-The “**build**” stage compiles the code by concatenating the contents of the two text files and saves the output to a archive "hello_world.tar" in a directory named “build”. 
+The “**build**” stage compiles the code by copying the content of the files to a directory named “build” and archives them as "hello_world.tar".
 
 It also creates an environment statement ```BUILD_JOB_ID=$CI_JOB_ID``` using the job ID to use it later in the release stage. 
 
