@@ -5,6 +5,8 @@ Based on "GitHub Container Registry: BETTER than Docker Hub?" at https://dev.to/
 
 Based on "GitHub Container Registry: BETTER Than Docker Hub?" at https://www.youtube.com/watch?v=WjzA9dfk5w4
 
+Based on "We are doing it WRONG! Containers deployment and promotion across environments" at https://www.youtube.com/watch?v=tG0O8vsO1LE
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
