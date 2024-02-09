@@ -170,7 +170,7 @@ deploy-job:      # This job runs in the deploy stage.
 
 .gitlab-ci.yml
 
-The ```.gitlab-ci.yml``` file defines two stages, “build” and “release”. 
+The ```.gitlab-ci.yml``` file defines five stages, "build", "test", "release", and "deploy". 
 
 The “**build**” stage compiles the code by copying the content of the files to a directory named “build” and archives them as "hello_world.tar".
 
